@@ -1,14 +1,14 @@
 // ignore_for_file: constant_identifier_names
 
-library flutter_iconsax;
+library iconsax_flutter;
 
 import 'package:flutter/widgets.dart';
 
-class FlutterIconsax {
-  FlutterIconsax._();
+class Iconsax {
+  Iconsax._();
 
   static const String _fontFamily = 'FlutterIconsax';
-  static const String _fontPackage = 'flutter_iconsax';
+  static const String _fontPackage = 'iconsax_flutter';
 
   static const dcube = IconData(
     0xe900,

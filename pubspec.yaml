@@ -1,7 +1,7 @@
-name: flutter_iconsax
-description: A new Flutter package project.
+name: iconsax_flutter
+description: A Flutter package for Iconsax Icons.
 version: 1.0.0
-repository: https://github.com/PersianFlutter/flutter_iconsax
+repository: https://github.com/PersianFlutter/iconsax_flutter
 
 environment:
   sdk: '>=3.0.2 <4.0.0'

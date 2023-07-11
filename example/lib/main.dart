@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_iconsax/flutter_iconsax.dart';
+import 'package:iconsax_flutter/iconsax_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 void main() {
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Iconsax',
+      title: 'Iconsax Flutter',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
@@ -28,12 +28,12 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final list = FlutterIconsax.items.entries.toList();
+    final list = Iconsax.items.entries.toList();
 
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text('Flutter Iconsax'),
+        title: const Text('Iconsax Flutter'),
         actions: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 32),
@@ -42,7 +42,7 @@ class MyHomePage extends StatelessWidget {
               onPressed: () {
                 openGithubRepo();
               },
-              icon: const Icon(FlutterIconsax.facebook),
+              icon: const Icon(Iconsax.facebook),
             ),
           ),
         ],
@@ -73,7 +73,7 @@ class MyHomePage extends StatelessWidget {
             child: InkWell(
               borderRadius: BorderRadius.circular(8),
               onTap: () async {
-                final clipBoardValue = 'FlutterIconsax.${item.key}';
+                final clipBoardValue = 'Iconsax.${item.key}';
 
                 Clipboard.setData(ClipboardData(text: clipBoardValue));
 
@@ -125,7 +125,7 @@ class MyHomePage extends StatelessWidget {
 
   Future<void> openGithubRepo() async {
     final Uri url =
-        Uri.parse('https://github.com/PersianFlutter/flutter_iconsax');
+        Uri.parse('https://github.com/PersianFlutter/iconsax_flutter');
     if (!await launchUrl(url)) {
       throw Exception('Could not launch $url');
     }

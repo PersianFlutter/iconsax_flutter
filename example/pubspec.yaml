@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_iconsax:
+  iconsax_flutter:
     path: ../
   url_launcher: ^6.1.12
 
