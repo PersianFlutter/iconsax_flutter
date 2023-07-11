@@ -1,7 +1,7 @@
 name: flutter_iconsax
 description: A new Flutter package project.
 version: 0.0.1
-homepage:
+repository: https://github.com/PersianFlutter/flutter_iconsax
 
 environment:
   sdk: '>=3.0.2 <4.0.0'
@@ -15,3 +15,9 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+
+flutter:
+  fonts:
+    - family: FlutterIconsax
+      fonts:
+        - asset: fonts/FlutterIconsax.ttf
