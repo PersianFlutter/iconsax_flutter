@@ -1,15 +1,18 @@
+import 'package:example/pages/home/home_providers.dart';
 import 'package:example/pages/home/widgets/home_app_bar.dart';
 import 'package:example/pages/home/widgets/icon_tile.dart';
 import 'package:example/pages/home/widgets/search_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax_flutter/iconsax_flutter.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends ConsumerWidget {
   const HomePage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final list = Iconsax.items.entries.toList();
+  Widget build(BuildContext context, WidgetRef ref) {
+    // final list = Iconsax.items.entries.toList();
+    final list = ref.watch(filteredListProvider);
+    print(list);
 
     return Scaffold(
       appBar: const HomeAppBar(),

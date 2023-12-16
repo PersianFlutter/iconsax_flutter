@@ -25,6 +25,8 @@ class FlatSearchBar extends ConsumerWidget {
             children: [
               Flexible(
                 child: TextFormField(
+                  onChanged: (value) =>
+                      ref.read(searchedIconQuery.notifier).state = value,
                   decoration: const InputDecoration(
                     contentPadding: EdgeInsets.zero,
                     hintText: "Search for icons",
@@ -38,6 +40,7 @@ class FlatSearchBar extends ConsumerWidget {
               IconButton(
                 onPressed: () {
                   ref.read(showSearchBarProvider.notifier).state = false;
+                  ref.read(searchedIconQuery.notifier).state = '';
                 },
                 icon: const Icon(
                   Icons.close_fullscreen,
