@@ -1,101 +1,69 @@
+import 'package:example/constants.dart';
+import 'package:example/pages/home/home_providers.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../utils.dart';
 
-class HomeAppBar extends HookWidget {
+class HomeAppBar extends ConsumerWidget implements PreferredSizeWidget {
   const HomeAppBar({super.key}) : super();
 
   @override
-  Widget build(BuildContext context) {
-    var searchBarExpanded = useState(false);
+  Size get preferredSize => const Size.fromHeight(100);
 
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 32),
-      child: Column(
-        children: [
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const FlutterLogo(
-                    size: 35,
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    var showSearchBar = ref.watch(showSearchBarProvider);
+    return Container(
+      color: Constants.appBarBackgroundColor,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 32),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              "Iconsax Flutter",
+              style: Theme.of(context).textTheme.headlineLarge?.copyWith(
+                    color: Constants.appBarForegroundColor,
                   ),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  const Icon(Icons.add),
-                  const SizedBox(
-                    width: 10,
-                  ),
-                  Image.asset(
-                    "images/iconbl.png",
-                    width: 150,
-                  ),
-                ],
-              ),
-              Row(
-                children: [
+            ),
+            Row(
+              children: [
+                if (!showSearchBar)
                   InkWell(
                     onTap: () {
-                      searchBarExpanded.value = !searchBarExpanded.value;
+                      ref.read(showSearchBarProvider.notifier).state = true;
                     },
                     borderRadius: BorderRadius.circular(50),
-                    child: const Icon(
-                      Icons.search,
-                      size: 30,
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 20,
-                  ),
-                  InkWell(
-                    onTap: () => openGithubRepo(),
-                    borderRadius: BorderRadius.circular(50),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        children: [
-                          Image.asset(
-                            "images/github-mark.png",
-                            width: 30,
-                          ),
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          Text(
-                            "Source code",
-                            style:
-                                Theme.of(context).textTheme.bodySmall?.copyWith(
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                          )
-                        ],
+                    child: const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Icon(
+                        Icons.search,
+                        size: 30,
+                        color: Constants.appBarForegroundColor,
                       ),
                     ),
                   ),
-                ],
-              )
-            ],
-          ),
-          const SizedBox(
-            height: 5,
-          ),
-          if (searchBarExpanded.value)
-            TextFormField(
-              decoration: const InputDecoration(
-                label: Text("E.x. airdrop ..."),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(10),
+                const SizedBox(
+                  width: 10,
+                ),
+                InkWell(
+                  onTap: () => openGithubRepo(),
+                  borderRadius: BorderRadius.circular(50),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Image.asset(
+                      "images/github-mark.png",
+                      width: 30,
+                      color: Constants.appBarForegroundColor,
+                    ),
                   ),
                 ),
-              ),
-            ),
-        ],
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

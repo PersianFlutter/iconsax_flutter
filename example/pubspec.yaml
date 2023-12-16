@@ -17,7 +17,6 @@ dependencies:
   hooks_riverpod: ^2.4.9
   flutter_hooks: ^0.20.3
   flutter_riverpod: ^2.4.9
-
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
