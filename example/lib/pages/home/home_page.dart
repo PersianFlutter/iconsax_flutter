@@ -10,9 +10,7 @@ class HomePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // final list = Iconsax.items.entries.toList();
     final list = ref.watch(filteredListProvider);
-    print(list);
 
     return Scaffold(
       appBar: const HomeAppBar(),
