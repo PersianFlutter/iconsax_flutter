@@ -1,6 +1,6 @@
 name: example
 description: A new Flutter project.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: 'none'
 
 version: 1.0.0+1
 
@@ -12,9 +12,11 @@ dependencies:
     sdk: flutter
   iconsax_flutter:
     path: ../
-  url_launcher: ^6.1.12
-
-
+  url_launcher: ^6.2.2
+  google_fonts: ^6.1.0
+  hooks_riverpod: ^2.4.9
+  flutter_hooks: ^0.20.3
+  flutter_riverpod: ^2.4.9
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
@@ -24,3 +26,7 @@ dev_dependencies:
 flutter:
 
   uses-material-design: true
+
+
+  assets:
+    - assets/images/
