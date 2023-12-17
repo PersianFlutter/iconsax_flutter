@@ -2,7 +2,7 @@
 
 ![iconsax_flutter](https://github.com/mahmoud-eslami/iconsax_flutter/assets/57481226/1ea9ca95-b753-44b8-8be4-b7cdf7bb61c9)
 
-A Flutter package for Iconsax Icons.
+Enhance your Flutter apps with Iconsax Flutter, a package that adds a wide variety of icons in different styles - Linear, Bulk, Two Tone, Bold, Outline, and Broken. Your UIs will become more visually appealing and engaging.
 
 ## Icon Finder Website
 
