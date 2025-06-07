@@ -20,8 +20,8 @@ class IconTile extends HookWidget {
           borderRadius: BorderRadius.circular(10),
           side: BorderSide(
             width: hovered.value ? 2 : 1,
-            color: Constants.seedColor.withOpacity(
-              hovered.value ? .7 : .2,
+            color: Constants.seedColor.withValues(
+              alpha: hovered.value ? .7 : .2,
             ),
           ),
         ),

@@ -1,6 +1,6 @@
 name: iconsax_flutter
 description: A Flutter package for Iconsax Icons.
-version: 1.0.0
+version: 1.0.1
 repository: https://github.com/PersianFlutter/iconsax_flutter
 
 environment:
@@ -14,7 +14,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  flutter_lints: ^6.0.0
 
 flutter:
   fonts:
