@@ -1,9 +1,7 @@
 // ignore_for_file: constant_identifier_names
-
-library iconsax_flutter;
-
 import 'package:flutter/widgets.dart';
 
+@staticIconProvider
 class Iconsax {
   Iconsax._();
 
